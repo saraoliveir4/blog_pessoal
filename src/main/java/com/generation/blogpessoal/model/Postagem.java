@@ -15,19 +15,19 @@ import jakarta.validation.constraints.Size;
 @Entity
 @Table(name = "tb_postagens")
 public class Postagem {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NotBlank(message = "O atributo Título é obrigatório!")
 	@Size(min = 5, max = 100, message = "O atributo Título deve conter no mínimo 5 e no máximo 100 caracteres")
 	private String titulo;
-	
+
 	@NotBlank(message = "O atributo Texto é obrigatório!")
 	@Size(min = 10, max = 1000, message = "O atributo Texto deve conter no mínimo 10 e no máximo 1000 caracteres")
 	private String texto;
-	
+
 	@UpdateTimestamp
 	private LocalDateTime data;
 
